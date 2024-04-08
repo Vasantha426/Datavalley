@@ -1,32 +1,18 @@
-import java.util.Scanner;
 
-public class OddPositionCharacters {
+    public class SumDivisibleBy5And2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Input string
-        System.out.print("Enter a string: ");
-        String text = scanner.nextLine();
-
-        // Print odd position characters ignoring white spaces
-        System.out.println("Odd position characters ignoring white spaces:");
-        printOddPositionCharacters(text);
-
-        scanner.close();
+        int[] values = {100, 52, 43, 99, 42, 40, 91};
+        int sum = findSumDivisibleBy5And2(values);
+        System.out.println("Sum of numbers divisible by 5 and 2: " + sum);
     }
 
-    // Method to print odd position characters ignoring white spaces
-    public static void printOddPositionCharacters(String text) {
-        for (int i = 0; i < text.length(); i++) {
-            // Skip white spaces
-            if (text.charAt(i) == ' ') {
-                continue;
-            }
-            // Print characters at odd positions
-            if (i % 2 != 0) {
-                System.out.print(text.charAt(i) + " ");
+    public static int findSumDivisibleBy5And2(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            if (num % 5 == 0 && num % 2 == 0) {
+                sum += num;
             }
         }
-        System.out.println();
+        return sum;
     }
 }
